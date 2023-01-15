@@ -21,8 +21,6 @@ class pokemon_model(db.Model):
     # def __repr__(self):
     # #     return f'name = {name}, species = {species}, height = {height}, weight = {weight})'
 
-
-
 pokemon_put_args = reqparse.RequestParser()
 pokemon_put_args.add_argument("name", type=str, help = "name of the pokemon is required", required=True)
 pokemon_put_args.add_argument("species", type=str, help = "type/species of the pokemon is required", required=True)
@@ -72,7 +70,7 @@ class pokemon(Resource):
 
     #this put method below creates the pokemon in memory, not in database
     # def put(self, pokemon_name):
-    #     # abort_if_pokemon_exists(pokemon_name)
+    #     # abort_if_pokemon_exiscts(pokemon_name)
     #     args = pokemon_put_args.parse_args()
     #     pokemon_dict[pokemon_name] = args
     #     return pokemon_dict[pokemon_name], 201
@@ -121,9 +119,6 @@ class pokemon(Resource):
 
 
     # def patch(self, id)
-
-
-
 
 
 api.add_resource(pokemon, "/pokemon/<int:id>")
